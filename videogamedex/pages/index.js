@@ -27,7 +27,7 @@ export default function Home({games}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch('https://api.rawg.io/api/games?key=56900b065e5d4c2d923515e904b9edb6')
   const games = await res.json()
   // const gameResults = games.results
