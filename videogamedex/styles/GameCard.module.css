@@ -1,0 +1,15 @@
+.game {
+    /* width: 280px; */
+    width: 23rem;
+    height: 330px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgb(42, 49, 61);
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+}

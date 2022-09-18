@@ -1,0 +1,19 @@
+.nav{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.navtitle {
+    display: flex;
+    align-items: center;
+}
+
+.searchbar {
+    padding: 0.5rem 1rem;
+    border: 0.1rem rgba(255, 255, 255, 0.071) solid;
+    border-radius: 0.8rem;
+    font-size: medium;
+    /* width: 100%; */
+}
+
