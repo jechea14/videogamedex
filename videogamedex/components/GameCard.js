@@ -8,7 +8,7 @@ const GameCard = ({name, img, slug, id}) => {
     <>
         <Link href='/games/[id]' as={`/games/${slug}`} key={id}>
             <div className={styles.game}>
-                <Image src={img} width={400} height={250} />
+                <Image src={img} alt={name} width={400} height={250} />
                 <h1 className={styles.title}>{name}</h1>
             </div>
         </Link>
