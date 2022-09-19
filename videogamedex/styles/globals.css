@@ -21,7 +21,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: rgb(226 232 240);
+    background: rgb(15 23 42);
   }
 }
