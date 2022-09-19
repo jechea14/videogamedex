@@ -48,7 +48,7 @@ const games = ({game}) => {
         </div>
         <div>
           <h2>Website</h2>
-          <a href={game.website} target="_blank">{game.website}</a>
+          <a href={game.website} target="_blank" rel="noreferrer">{game.website}</a>
         </div>
       </div>
       )
