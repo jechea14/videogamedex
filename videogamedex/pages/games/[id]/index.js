@@ -1,3 +1,5 @@
+import GameInfo from "../../../components/GameInfo"
+import styles from '../../../styles/GameInfo.module.css'
 
 const games = ({game}) => {
     console.log(game)

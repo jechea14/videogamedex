@@ -1,10 +1,10 @@
 .game {
     /* width: 280px; */
-    width: 23rem;
+    width: 25rem;
     height: 330px;
     overflow: hidden;
     cursor: pointer;
-    background-color: rgb(42, 49, 61);
+    background-color: rgba(42, 49, 61, 0.625);
     margin: 20px;
     border-radius: 20px;
 }

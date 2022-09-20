@@ -11,6 +11,7 @@ export default function Home({games}) {
   return (
     <div>
       <NavBar/>
+      <h1>All Games</h1>
       <div className={styles.gameContainer}>
         {
           games.results.map((game) => {
@@ -20,6 +21,7 @@ export default function Home({games}) {
               img={game.background_image} 
               slug={game.slug} 
               id={game.id} 
+              metascore={game.metacritic}
               key={game.id} 
               />
             )
