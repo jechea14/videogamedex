@@ -10,7 +10,7 @@ const GameCard = ({name, img, slug, id, metascore}) => {
         <Link href='/games/[id]' as={`/games/${slug}`} key={id}>
             <div className={styles.game}>
                 <Image src={img} alt={name} width={400} height={250} />
-                <div>
+                <div className={styles.titleAndMetascore}>
                   <h1 className={styles.title}>{name}</h1>
                   <Metascore metascore={metascore}/>
                 </div>

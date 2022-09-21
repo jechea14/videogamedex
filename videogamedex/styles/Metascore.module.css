@@ -1,5 +1,11 @@
 .container {
-    border: 1px solid red;
-    width: 1.5rem;
+    /* border: 1px solid red; */
+    /* width: 1.5rem; */
     text-align: center;
+    padding: 0.3rem;
+
+}
+
+.green {
+    border: 1px solid green;
 }
