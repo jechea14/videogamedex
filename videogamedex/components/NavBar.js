@@ -10,7 +10,7 @@ const NavBar = () => {
   const observer = useRef()
 
   const lastElement = (node) => {
-    
+
   }
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const NavBar = () => {
         </div>
         <div className={styles.searchContainer}>
           <input placeholder='Search 790k+ games' type='text' className={styles.searchbar} onChange={(e) => handleChange(e)}/>
-          {
+          {/* {
             data.map((game, index) => {
               if(data.length === index + 1) {
                 return <div key={index} ref={lastElement} className={styles.searchTitle}>{game}</div>
@@ -53,7 +53,7 @@ const NavBar = () => {
               }
               
             })
-          }
+          } */}
         </div>
     </nav>
   )
