@@ -1,58 +1,64 @@
-import GameInfo from "../../../components/GameInfo"
-import styles from '../../../styles/GameInfo.module.css'
+import NavBar from '../../../components/NavBar.js'
+import Image from 'next/image'
+import styles from '../../../styles/GamePage.module.css'
 
 const games = ({game}) => {
     console.log(game)
 
     return (
-      <div>
-        <h1>{game.name}</h1>
-        <p>{game.description_raw}</p>
-        <div>
-          <h2>Genre</h2>
-          {
-            game.genres.map((genre) => {
-              return <p key={genre.name}>{genre.name}</p>
-            })
-          }
+      <>
+        <NavBar/>
+        <div className={styles.container}>
+          <h1>{game.name}</h1>
+          <Image src={game.background_image} alt={game.name} width={4000} height={2500} />
+          <p>{game.description_raw}</p>
+          <div>
+            <h2>Genre</h2>
+            {
+              game.genres.map((genre) => {
+                return <p key={genre.name}>{genre.name}</p>
+              })
+            }
+          </div>
+          <div>
+            <h2>Platforms</h2>
+            {
+              game.platforms.map((platform) => {
+                return <p key={platform.platform.name}>{platform.platform.name}</p>
+              })
+            }
+          </div>
+          <div>
+            <h2>Release Date</h2>
+            <p>{game.released}</p>
+          </div>
+          <div>
+            <h2>Metascore</h2>
+            <p>{game.metacritic}</p>
+          </div>
+          <div>
+            <h2>Publisher</h2>
+            {
+              game.publishers.map((publisher) => {
+                return <p key={publisher.name}>{publisher.name}</p>
+              })
+            }
+          </div>
+          <div>
+            <h2>Developer</h2>
+            {
+              game.developers.map((developer) => {
+                return <p key={developer.name}>{developer.name}</p>
+              })
+            }
+          </div>
+          <div>
+            <h2>Website</h2>
+            <a href={game.website} target="_blank" rel="noreferrer">{game.website}</a>
+          </div>
+
         </div>
-        <div>
-          <h2>Platforms</h2>
-          {
-            game.platforms.map((platform) => {
-              return <p key={platform.platform.name}>{platform.platform.name}</p>
-            })
-          }
-        </div>
-        <div>
-          <h2>Release Date</h2>
-          <p>{game.released}</p>
-        </div>
-        <div>
-          <h2>Metascore</h2>
-          <p>{game.metacritic}</p>
-        </div>
-        <div>
-          <h2>Publisher</h2>
-          {
-            game.publishers.map((publisher) => {
-              return <p key={publisher.name}>{publisher.name}</p>
-            })
-          }
-        </div>
-        <div>
-          <h2>Developer</h2>
-          {
-            game.developers.map((developer) => {
-              return <p key={developer.name}>{developer.name}</p>
-            })
-          }
-        </div>
-        <div>
-          <h2>Website</h2>
-          <a href={game.website} target="_blank" rel="noreferrer">{game.website}</a>
-        </div>
-      </div>
+      </>
       )
 }
 
