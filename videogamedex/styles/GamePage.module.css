@@ -1,3 +1,13 @@
 .container {
     /* display: flex; */
 }
+
+.bgimg {
+    z-index: 0;
+    opacity: 0.15;
+}
+
+.text {
+    position: relative;
+    z-index: 1;
+}

@@ -10,8 +10,20 @@ const games = ({game}) => {
         <NavBar/>
         <div className={styles.container}>
           <h1>{game.name}</h1>
-          <Image src={game.background_image} alt={game.name} width={4000} height={2500} />
-          <p>{game.description_raw}</p>
+          <Image 
+            className={styles.bgimg}
+            src={game.background_image} 
+            alt={game.name} 
+            layout='fill'
+            objectFit='cover'
+            objectPosition='center'
+            // width={4000} 
+            // height={2500} 
+          />
+          <div>
+            <h2>About</h2>
+            <p className={styles.text}>{game.description_raw}</p>
+          </div>
           <div>
             <h2>Genre</h2>
             {
