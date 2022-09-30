@@ -1,6 +1,7 @@
 import NavBar from '../../../components/NavBar.js'
 import Image from 'next/image'
 import styles from '../../../styles/GamePage.module.css'
+import InfoCard from '../../../components/infoCard.jsx'
 
 const games = ({game}) => {
     console.log(game)
@@ -10,19 +11,31 @@ const games = ({game}) => {
         <NavBar/>
         <div className={styles.container}>
           <h1>{game.name}</h1>
-          <Image 
+          {/* <Image 
             className={styles.bgimg}
-            src={game.background_image} 
+            src={game.background_image_additional} 
             alt={game.name} 
             layout='fill'
             objectFit='cover'
             objectPosition='center'
             // width={4000} 
             // height={2500} 
+          /> */}
+          <Image 
+            src={game.background_image} 
+            alt={game.name} 
+            width={4000} 
+            height={2500} 
           />
+          <Image 
+            src={game.background_image_additional} 
+            alt={game.name} 
+            width={4000} 
+            height={2500} 
+          />
+          
           <div>
-            <h2>About</h2>
-            <p className={styles.text}>{game.description_raw}</p>
+            <InfoCard title={"About"} desc={game.description_raw}/>
           </div>
           <div>
             <h2>Genre</h2>
@@ -41,12 +54,10 @@ const games = ({game}) => {
             }
           </div>
           <div>
-            <h2>Release Date</h2>
-            <p>{game.released}</p>
+            <InfoCard title={"Release Date"} desc={game.released}/>
           </div>
           <div>
-            <h2>Metascore</h2>
-            <p>{game.metacritic}</p>
+            <InfoCard title={"Metascore"} desc={game.metacritic}/>
           </div>
           <div>
             <h2>Publisher</h2>
