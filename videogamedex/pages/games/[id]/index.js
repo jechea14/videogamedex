@@ -34,10 +34,10 @@ const games = ({game}) => {
             height={2500} 
           />
           
-          <div>
+          <div className={styles.infoCard}>
             <InfoCard title={"About"} desc={game.description_raw}/>
           </div>
-          <div>
+          <div className={styles.infoCard}>
             <h2>Genre</h2>
             {
               game.genres.map((genre) => {
@@ -45,7 +45,7 @@ const games = ({game}) => {
               })
             }
           </div>
-          <div>
+          <div className={styles.infoCard}>
             <h2>Platforms</h2>
             {
               game.platforms.map((platform) => {
@@ -53,13 +53,13 @@ const games = ({game}) => {
               })
             }
           </div>
-          <div>
+          <div className={styles.infoCard}>
             <InfoCard title={"Release Date"} desc={game.released}/>
           </div>
-          <div>
+          <div className={styles.infoCard}>
             <InfoCard title={"Metascore"} desc={game.metacritic}/>
           </div>
-          <div>
+          <div className={styles.infoCard}>
             <h2>Publisher</h2>
             {
               game.publishers.map((publisher) => {
@@ -67,7 +67,7 @@ const games = ({game}) => {
               })
             }
           </div>
-          <div>
+          <div className={styles.infoCard}>
             <h2>Developer</h2>
             {
               game.developers.map((developer) => {
@@ -75,8 +75,8 @@ const games = ({game}) => {
               })
             }
           </div>
-          <div>
-            <h2>Website</h2>
+          <div className={styles.infoCard}>
+            <h2 className={styles.infoCard}>Website</h2>
             <a href={game.website} target="_blank" rel="noreferrer">{game.website}</a>
           </div>
 
