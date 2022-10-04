@@ -1,7 +1,7 @@
 import NavBar from '../../../components/NavBar.js'
 import Image from 'next/image'
 import styles from '../../../styles/GamePage.module.css'
-import InfoCard from '../../../components/infoCard.jsx'
+import InfoCard from '../../../components/InfoCard.jsx'
 
 const games = ({game}) => {
     console.log(game)
