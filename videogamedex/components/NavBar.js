@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import axios from 'axios'
 import styles from '../styles/Navbar.module.css'
+import {AiOutlineMenu} from 'react-icons/ai'
 
 const NavBar = () => {
   const [query, setQuery] = useState("")
@@ -54,6 +55,9 @@ const NavBar = () => {
               
             })
           } */}
+        </div>
+        <div className={styles.mobileNav}>
+          <AiOutlineMenu size={35}/>
         </div>
     </nav>
   )

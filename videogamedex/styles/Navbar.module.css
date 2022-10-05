@@ -29,3 +29,8 @@
     padding: 10px 0;
 }
 
+.mobileNav {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
