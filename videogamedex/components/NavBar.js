@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react'
 import axios from 'axios'
 import styles from '../styles/Navbar.module.css'
-import {AiOutlineMenu} from 'react-icons/ai'
+import {HiOutlineMenu} from 'react-icons/hi'
+import {MdClose} from 'react-icons/md'
 
 const NavBar = () => {
   const [query, setQuery] = useState("")
@@ -9,6 +10,8 @@ const NavBar = () => {
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
   const observer = useRef()
+
+  const [mobileNavShown, setMobileNavShown] = useState(false)
 
   const lastElement = (node) => {
 
@@ -32,6 +35,9 @@ const NavBar = () => {
     getSearchItems()
   }, [query, page])
 
+  const handleNavbar = () => {
+    setMobileNavShown(!mobileNavShown)
+  }
 
   const handleChange = (e) => {
     setQuery(e.target.value)
@@ -56,8 +62,18 @@ const NavBar = () => {
             })
           } */}
         </div>
-        <div className={styles.mobileNav}>
-          <AiOutlineMenu size={35}/>
+
+
+        <div className={styles.mobileNav} onClick={handleNavbar}>
+          {
+            !mobileNavShown ? <HiOutlineMenu size={35}/> : <MdClose size={35}/>
+          }
+
+          {/* inside div so the menu closes upon click */}
+          <ul className={!mobileNavShown ? styles.hidden : styles.mobileNavPopup}>
+            <li>Home</li>
+            <li>.</li>
+          </ul>
         </div>
     </nav>
   )

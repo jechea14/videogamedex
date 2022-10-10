@@ -7,14 +7,14 @@
 .navtitle {
     display: flex;
     align-items: center;
-    font-size: small;
+    font-size: x-small;
 }
 
 .searchbar {
     padding: 0.5rem 0.5rem;
     border: 0.1rem rgba(255, 255, 255, 0.071) solid;
     border-radius: 0.8rem;
-    font-size: small;
+    font-size: x-small;
 }
 
 .searchContainer {
@@ -25,7 +25,7 @@
 }
 
 .searchTitle {
-    font-size: 18px;
+    font-size: 15px;
     padding: 10px 0;
 }
 
@@ -33,4 +33,20 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.mobileNavPopup {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+}
+
+@media (min-width: 720px) {
+    .mobileNav {
+        display: none;
+    }
 }
