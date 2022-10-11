@@ -3,10 +3,9 @@ import GameCard from '../components/GameCard'
 import styles from '../styles/Home.module.css'
 import NavBar from '../components/NavBar'
 import Pagination from '../components/Pagination'
+
+
 export default function Home({games}) {
-
-
-
   console.log(games)
   return (
     <div>

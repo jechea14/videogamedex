@@ -46,7 +46,7 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
         <div className={styles.navtitle}>
-            <h1>VideoGameDex</h1>
+            <a href='/'>VideoGameDex</a>
         </div>
         <div className={styles.searchContainer}>
           <input placeholder='Search 790k+ games' type='text' className={styles.searchbar} onChange={(e) => handleChange(e)}/>
