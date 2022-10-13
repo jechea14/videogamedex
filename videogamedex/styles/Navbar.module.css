@@ -29,6 +29,11 @@
     padding: 10px 0;
 }
 
+.searches {
+    position: absolute;
+    top: 5rem;
+}
+
 .mobileNav {
     display: flex;
     justify-content: center;

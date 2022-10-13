@@ -43,6 +43,8 @@ const NavBar = () => {
     setQuery(e.target.value)
   }
 
+  const shouldStartSearch = query.length > 0
+
   return (
     <nav className={styles.nav}>
         <div className={styles.navtitle}>
@@ -51,9 +53,16 @@ const NavBar = () => {
         <div className={styles.searchContainer}>
           <input placeholder='Search 790k+ games' type='text' className={styles.searchbar} onChange={(e) => handleChange(e)}/>
           {/* {
+            shouldStartSearch &&
+
             data.map((game, index) => {
               if(data.length === index + 1) {
-                return <div key={index} ref={lastElement} className={styles.searchTitle}>{game}</div>
+                return (
+                  <div className={styles.searches}>
+
+                    <div key={index} ref={lastElement} className={styles.searchTitle}>{game}</div>
+                  </div>
+                )
               }
               else {
                 return <div key={index} className={styles.searchTitle}>{game}</div>
