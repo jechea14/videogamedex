@@ -26,12 +26,20 @@
 
 .searchTitle {
     font-size: 15px;
-    padding: 10px 0;
+    padding: 10px;
+    background-color: #252423;
+}
+
+.searchTitle:hover {
+    background-color: #201f1e;
 }
 
 .searches {
     position: absolute;
     top: 5rem;
+
+    /* text was behind images, move to front */
+    z-index: 1;
 }
 
 .mobileNav {

@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import Link from 'next/link'
 import axios from 'axios'
 import styles from '../styles/Navbar.module.css'
 import {HiOutlineMenu} from 'react-icons/hi'
@@ -48,28 +49,25 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
         <div className={styles.navtitle}>
-            <a href='/'>VideoGameDex</a>
+          <Link href='/'/>
         </div>
         <div className={styles.searchContainer}>
           <input placeholder='Search 790k+ games' type='text' className={styles.searchbar} onChange={(e) => handleChange(e)}/>
-          {/* {
-            shouldStartSearch &&
+          {/* <div className={styles.searches}>
+            {
+              shouldStartSearch &&
 
-            data.map((game, index) => {
-              if(data.length === index + 1) {
-                return (
-                  <div className={styles.searches}>
-
-                    <div key={index} ref={lastElement} className={styles.searchTitle}>{game}</div>
-                  </div>
-                )
-              }
-              else {
-                return <div key={index} className={styles.searchTitle}>{game}</div>
-              }
-              
-            })
-          } */}
+              data.map((game, index) => {
+                if(data.length === index + 1) {
+                  return <div key={index} ref={lastElement} className={styles.searchTitle}>{game}</div>
+                }
+                else {
+                  return <div key={index} className={styles.searchTitle}>{game}</div>
+                }
+                
+              })
+            }
+          </div> */}
         </div>
 
 
