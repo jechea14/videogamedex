@@ -1,16 +1,17 @@
 .game {
     /* width: 280px; */
     width: 25rem;
-    height: 330px;
+    height: auto;
     overflow: hidden;
-    cursor: pointer;
     background-color: rgba(42, 49, 61, 0.625);
     margin: 20px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title {
-    /* text-align: center; */
     font-size: 1.5rem;
 }
 
@@ -18,4 +19,40 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    align-items: center;
+}
+
+.platform {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0.8rem;
+}
+
+.platformName {
+    border: 1px solid rgb(247, 226, 226);
+    border-radius: 0.4rem;
+    padding: 0.2rem;
+    margin: 0.3rem 0.3rem;
+    font-size: small;
+}
+
+.link {
+    text-align: center;
+}
+
+.linkButton {
+    text-decoration: underline;
+    margin: 1rem 0;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+}
+
+.linkButton:hover {
+    color: grey;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    cursor: pointer;
+
 }

@@ -10,6 +10,10 @@ export default function Home({games}) {
   return (
     <div>
       <NavBar/>
+      <Pagination
+      count={games.count}
+      />
+
       <h1>All Games</h1>
       <div className={styles.gameContainer}>
         {
@@ -21,13 +25,14 @@ export default function Home({games}) {
               slug={game.slug} 
               id={game.id} 
               metascore={game.metacritic}
+              platform={game.parent_platforms}
               key={game.id} 
               />
             )
           })
+          
         }
       </div>
-      <Pagination/>
     </div>
   )
 }

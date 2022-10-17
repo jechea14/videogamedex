@@ -7,5 +7,22 @@
 }
 
 .green {
-    border: 1px solid green;
+    border: 1px solid rgb(4, 158, 4);
+    color: rgb(4, 158, 4);
+}
+
+.orange {
+    border: 1px solid orange;
+    color: orange;
+}
+
+.red {
+    border: 1px solid red;
+    color: red
+}
+
+.green, .orange, .red {
+    font-weight: bold;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
 }

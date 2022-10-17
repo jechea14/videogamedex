@@ -4,18 +4,33 @@ import Image from 'next/image'
 import styles from '../styles/GameCard.module.css'
 import Metascore from './Metascore'
 
-const GameCard = ({name, img, slug, id, metascore}) => {
+const GameCard = ({name, img, slug, id, metascore, platform}) => {
+
   return (
     <>
-        <Link href='/games/[id]' as={`/games/${slug}`} key={id}>
-            <div className={styles.game}>
-                <Image src={img} alt={name} width={400} height={250} />
-                <div className={styles.titleAndMetascore}>
-                  <h1 className={styles.title}>{name}</h1>
-                  <Metascore metascore={metascore}/>
-                </div>
+        <div className={styles.game}>
+          <div>
+            <Image src={img} alt={name} width={400} height={250} />
+            <div className={styles.titleAndMetascore}>
+              <h1 className={styles.title}>{name}</h1>
+              <Metascore metascore={metascore}/>
             </div>
-        </Link>
+            <div className={styles.platform}>
+              {
+                platform.map((platforms) => {
+                  return <p key={platforms.platform.name} className={styles.platformName}>{platforms.platform.name}</p>
+                })
+              }
+            </div>
+          </div>
+          <Link href='/games/[id]' as={`/games/${slug}`} key={id}>
+            <div className={styles.link}>
+              <button className={styles.linkButton}>
+                View More
+              </button>
+            </div>
+          </Link>
+        </div>
     </>
   )
 }
