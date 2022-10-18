@@ -46,6 +46,7 @@
     background-color: inherit;
     color: inherit;
     border: none;
+    font-size: medium;
 }
 
 .linkButton:hover {

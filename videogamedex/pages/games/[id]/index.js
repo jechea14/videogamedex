@@ -2,6 +2,7 @@ import NavBar from '../../../components/NavBar.js'
 import Image from 'next/image'
 import styles from '../../../styles/GamePage.module.css'
 import InfoCard from '../../../components/InfoCard.jsx'
+import Metascore from '../../../components/Metascore.js'
 
 const games = ({game}) => {
     console.log(game)
@@ -57,7 +58,9 @@ const games = ({game}) => {
             <InfoCard title={"Release Date"} desc={game.released}/>
           </div>
           <div className={styles.infoCard}>
-            <InfoCard title={"Metascore"} desc={game.metacritic}/>
+            {/* <InfoCard title={"Metascore"} desc={game.metacritic}/> */}
+            <h2>Metascore</h2>
+            <Metascore metascore={game.metacritic}/>
           </div>
           <div className={styles.infoCard}>
             <h2>Publisher</h2>
