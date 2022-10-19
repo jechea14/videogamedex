@@ -79,7 +79,7 @@ const games = ({game}) => {
             }
           </div>
           <div className={styles.infoCard}>
-            <h2 className={styles.infoCard}>Website</h2>
+            <h2>Website</h2>
             <a href={game.website} target="_blank" rel="noreferrer">{game.website}</a>
           </div>
 
