@@ -10,9 +10,9 @@ export default function Home({games}) {
   return (
     <div>
       <NavBar/>
-      <Pagination
+      {/* <Pagination
       count={games.count}
-      />
+      /> */}
 
       <h1>All Games</h1>
       <div className={styles.gameContainer}>
