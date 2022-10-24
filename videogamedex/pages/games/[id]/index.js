@@ -28,13 +28,16 @@ const games = ({game}) => {
             width={4000} 
             height={2500} 
           />
-          <Image 
-            src={game.background_image_additional} 
-            alt={game.name} 
-            width={4000} 
-            height={2500} 
-          />
-          
+
+          {
+            game.background_image_additional === null ? 
+            <></> : <Image 
+                    src={game.background_image_additional} 
+                    alt={game.name} 
+                    width={4000} 
+                    height={2500} 
+                    />
+          }
           <div className={styles.infoCard}>
             <InfoCard title={"About"} desc={game.description_raw}/>
           </div>

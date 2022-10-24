@@ -4,6 +4,7 @@ import axios from 'axios'
 import styles from '../styles/Navbar.module.css'
 import {HiOutlineMenu} from 'react-icons/hi'
 import {MdClose} from 'react-icons/md'
+import {AiOutlineSearch} from 'react-icons/ai'
 
 const NavBar = () => {
   const [query, setQuery] = useState("")
@@ -72,7 +73,7 @@ const NavBar = () => {
             <Link href='/'>VideoGameDex</Link>
         </div>
         <div className={styles.searchContainer}>
-          <input placeholder='Search 790k+ games' type='text' className={styles.searchbar} onChange={(e) => handleChange(e)}/>
+          <input placeholder='Search 790k+ games' type="search" className={styles.searchbar} onChange={(e) => handleChange(e)}/>
           <div className={styles.searches}>
             {
               shouldStartSearch &&
@@ -84,7 +85,6 @@ const NavBar = () => {
                 else {
                   return <div key={index} className={styles.searchTitle}>{game}</div>
                 }
-                
               })
             }
           </div>

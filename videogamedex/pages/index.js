@@ -58,7 +58,7 @@ export default function Home({games}) {
           games.results.map((game, index) => {
             if(games.length === index + 1) {
               return (
-                <div ref={lastElement}>
+                <div ref={lastElement} key={game.id}>
                   <GameCard 
                   name={game.name} 
                   img={game.background_image} 
