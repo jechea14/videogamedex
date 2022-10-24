@@ -13,6 +13,24 @@ const NavBar = () => {
   const observer = useRef()
 
   const [mobileNavShown, setMobileNavShown] = useState(false)
+  
+  const useDebounce = (value, delay) => {
+    const [debouncedValue, setDebouncedValue] = useState(value)
+
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebouncedValue(value)
+      }, delay)
+
+      return () => {
+        clearTimeout(handler)
+      }
+    }, [value, delay])
+
+    return debouncedValue
+  }
+
+  const debouncedSearch = useDebounce(query, 500)
 
   const lastElement = (node) => {
 
@@ -29,12 +47,13 @@ const NavBar = () => {
       console.log(games)
       setLoading(false)
       setData((prev) => {
-        return [...new Set([...prev, ...games.data.results.map((game) => game.name)])]
+        return [...new Set([...prev, ...games.data.results.map((game) => <Link href='/games/[id]' as={`/games/${game.slug}`} key={game.id}>{game.name}</Link>)])]
       })
     }
 
-    getSearchItems()
-  }, [query, page])
+    if (debouncedSearch) getSearchItems();
+    
+  }, [debouncedSearch, page])
 
   const handleNavbar = () => {
     setMobileNavShown(!mobileNavShown)
@@ -46,6 +65,7 @@ const NavBar = () => {
 
   const shouldStartSearch = query.length > 0
 
+
   return (
     <nav className={styles.nav}>
         <div className={styles.navtitle}>
@@ -53,7 +73,7 @@ const NavBar = () => {
         </div>
         <div className={styles.searchContainer}>
           <input placeholder='Search 790k+ games' type='text' className={styles.searchbar} onChange={(e) => handleChange(e)}/>
-          {/* <div className={styles.searches}>
+          <div className={styles.searches}>
             {
               shouldStartSearch &&
 
@@ -67,7 +87,7 @@ const NavBar = () => {
                 
               })
             }
-          </div> */}
+          </div>
         </div>
 
 

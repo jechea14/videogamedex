@@ -1,4 +1,4 @@
-import React, {useState, useRef, useCallback} from 'react'
+import React, {useState, useRef, useCallback, useEffect} from 'react'
 import GameCard from '../components/GameCard'
 import styles from '../styles/Home.module.css'
 import NavBar from '../components/NavBar'
@@ -25,6 +25,25 @@ export default function Home({games}) {
 
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
+
+  useEffect(() => {
+    setLoading(true);
+    const getStaticProps = async () => {
+      const res = await fetch('https://api.rawg.io/api/games?key=56900b065e5d4c2d923515e904b9edb6')
+      const games = await res.json()
+    
+      return {
+        props: {
+          games
+        }
+      }
+    }
+    setLoading(false)
+    setHasMore((prevGames) => {
+      return
+    })
+    
+  })
 
   return (
     <div>
@@ -76,7 +95,7 @@ export default function Home({games}) {
 export const getStaticProps = async () => {
   const res = await fetch('https://api.rawg.io/api/games?key=56900b065e5d4c2d923515e904b9edb6')
   const games = await res.json()
-  
+
   return {
     props: {
       games
