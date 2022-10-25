@@ -11,6 +11,7 @@ const NavBar = () => {
   const [data, setData] = useState([])
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
+  const [hasMore, setHasMore] = useState(false)
   const observer = useRef()
 
   const [mobileNavShown, setMobileNavShown] = useState(false)
@@ -21,6 +22,7 @@ const NavBar = () => {
     useEffect(() => {
       const handler = setTimeout(() => {
         setDebouncedValue(value)
+        setPage(1)
       }, delay)
 
       return () => {
@@ -34,8 +36,20 @@ const NavBar = () => {
   const debouncedSearch = useDebounce(query, 500)
 
   const lastElement = (node) => {
+    if (loading) return;
+    if (observer.current) observer.current.disconnect();
 
+    observer.current = new IntersectionObserver((entries) => {
+      console.log("in", entries);
+      if (entries[0].isIntersecting && hasMore) {
+        setPage((prevPageNumber) => prevPageNumber + 1);
+      }
+    })
+    console.log("node", node);
+    if (node) observer.current.observe(node)
   }
+
+  console.log("observer", observer)
 
   useEffect(() => {
     setData([])
@@ -47,6 +61,7 @@ const NavBar = () => {
       const games = await axios.get(`https://api.rawg.io/api/games?key=56900b065e5d4c2d923515e904b9edb6&page=${page}&search=${query}`)
       console.log(games)
       setLoading(false)
+      setHasMore(games.data.results.length > 0)
       setData((prev) => {
         return [...new Set([...prev, ...games.data.results.map((game) => <Link href='/games/[id]' as={`/games/${game.slug}`} key={game.id}>{game.name}</Link>)])]
       })
