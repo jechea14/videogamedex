@@ -26,24 +26,24 @@ export default function Home({games}) {
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
-  useEffect(() => {
-    setLoading(true);
-    const getStaticProps = async () => {
-      const res = await fetch('https://api.rawg.io/api/games?key=56900b065e5d4c2d923515e904b9edb6')
-      const games = await res.json()
+  // useEffect(() => {
+  //   setLoading(true);
+  //   const getStaticProps = async () => {
+  //     const res = await fetch('https://api.rawg.io/api/games?key=56900b065e5d4c2d923515e904b9edb6')
+  //     const games = await res.json()
     
-      return {
-        props: {
-          games
-        }
-      }
-    }
-    setLoading(false)
-    setHasMore((prevGames) => {
-      return
-    })
+  //     return {
+  //       props: {
+  //         games
+  //       }
+  //     }
+  //   }
+  //   setLoading(false)
+  //   setHasMore((prevGames) => {
+  //     return
+  //   })
     
-  })
+  // })
 
   return (
     <div>

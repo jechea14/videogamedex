@@ -89,7 +89,7 @@ const NavBar = () => {
         </div>
         <div className={styles.searchContainer}>
           <input placeholder='Search 790k+ games' type="search" className={styles.searchbar} onChange={(e) => handleChange(e)}/>
-          <div className={styles.searches}>
+          <div className={debouncedSearch && styles.searches}>
             {
               shouldStartSearch &&
 

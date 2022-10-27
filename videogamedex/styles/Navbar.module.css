@@ -40,6 +40,10 @@
 
     /* text was behind images, move to front */
     z-index: 1;
+
+    height: 30rem;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .mobileNav {
