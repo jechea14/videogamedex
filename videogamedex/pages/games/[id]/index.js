@@ -27,6 +27,7 @@ const games = ({game}) => {
             alt={game.name} 
             width={4000} 
             height={2500} 
+            loading="lazy"
           />
 
           {
@@ -36,6 +37,7 @@ const games = ({game}) => {
                     alt={game.name} 
                     width={4000} 
                     height={2500} 
+                    loading="lazy"
                     />
           }
           <div className={styles.infoCard}>

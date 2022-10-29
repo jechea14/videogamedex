@@ -5,11 +5,15 @@ const Metascore = ({metascore}) => {
 
   return (
     <div className={styles.container} id='meta'>
-      <div className={metascore >= 75 ? styles.green
-           : metascore >= 60 && metascore <= 74 ? styles.orange
-           : styles.red}>
-        {metascore}
-      </div>
+      {
+        metascore === null ? <p>N/A</p> : 
+        <div className={metascore >= 75 ? styles.green
+            : metascore >= 60 && metascore <= 74 ? styles.orange
+            : styles.red}>
+          {metascore}
+        </div>
+      }
+
     </div>
   )
 }

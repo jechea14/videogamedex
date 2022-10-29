@@ -10,7 +10,7 @@ const GameCard = ({name, img, slug, id, metascore, platform}) => {
     <>
         <div className={styles.game}>
           <div>
-            <Image src={img} alt={name} width={400} height={250} />
+            <Image src={img} alt={name} width={400} height={250} loading="lazy"/>
             <div className={styles.titleAndMetascore}>
               <h1 className={styles.title}>{name}</h1>
               <Metascore metascore={metascore}/>

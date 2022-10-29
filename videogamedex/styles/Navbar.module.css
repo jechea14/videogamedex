@@ -19,8 +19,7 @@
 
 .searchContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -65,5 +64,14 @@
 @media (min-width: 720px) {
     .mobileNav {
         display: none;
+    }
+
+    /* .searchContainer {
+        width: auto;
+        display: block;
+    } */
+
+    .searchbar {
+        
     }
 }
