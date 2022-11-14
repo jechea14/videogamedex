@@ -10,18 +10,26 @@ const GameCard = ({name, img, slug, id, metascore, platform}) => {
     <>
         <div className={styles.game}>
           <div>
-            <Image src={img} alt={name} width={400} height={250} loading="lazy"/>
+            {
+              img === null ? 
+              <></> :
+              <Image src={img} alt={name} width={400} height={250} loading="lazy"/>
+
+            }
             <div className={styles.titleAndMetascore}>
               <h1 className={styles.title}>{name}</h1>
               <Metascore metascore={metascore}/>
             </div>
-            <div className={styles.platform}>
+            {
+              platform === undefined ? <p>N/A</p> : <>            <div className={styles.platform}>
               {
                 platform.map((platforms) => {
                   return <p key={platforms.platform.name} className={styles.platformName}>{platforms.platform.name}</p>
                 })
-              }
-            </div>
+              }</div></>
+            }
+
+            
           </div>
           <Link href='/games/[id]' as={`/games/${slug}`} key={id}>
             <div className={styles.link}>
