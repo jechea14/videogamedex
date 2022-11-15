@@ -4,11 +4,11 @@ import styles from '../styles/Home.module.css'
 import NavBar from '../components/NavBar'
 
 export default function Home({games}) {
-  console.log(games)
   const [data, setData] = useState([]);
   const [nextPage, setNextPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("")
+  let next;
 
   useEffect(() => {
     setLoading(true);
@@ -70,10 +70,11 @@ export default function Home({games}) {
           return response.json();
         })
         .then((json) => {
+          console.log(json)
+          next = json['next']
           setData([...data, ...json['results']]);
         });
       setLoading(false)
-      console.log(data)
     }
 
     if (debouncedSearch) getSearchItems();
@@ -83,7 +84,10 @@ export default function Home({games}) {
   return (
     <div>
       <NavBar/>
-      <input placeholder='Search 790k+ games' type="search" className={styles.searchbar} onChange={(e) => handleChange(e)}/>
+      <div className={styles.inputContainer}>
+
+        <input placeholder='Search 790k+ games' type="search" className={styles.searchbar} onChange={(e) => handleChange(e)}/>
+      </div>
       <div className={styles.gameContainer}>
         {data.map((game) => {
           return (

@@ -132,17 +132,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* padding: 0.5rem; */
 }
 
-/* button {
-  padding: 1rem;
-} */
+.inputContainer {
+  padding: 0 1.3rem;
+}
 
 .searchbar {
-  padding: 0.5rem 2.5rem;
-  margin-left: 1.3rem;
+  padding: 0.5rem 0;
+  padding-left: 1rem;
   border: 0.1rem rgba(255, 255, 255, 0.071) solid;
   border-radius: 0.8rem;
   font-size: x-small;
+  width: 100%;
 }
