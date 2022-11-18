@@ -146,3 +146,21 @@
   font-size: x-small;
   width: 100%;
 }
+
+.loadMoreBtn {
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: rgba(42, 49, 61, 0.625);
+  border-color: rgba(23, 26, 32, 0.57);
+  color: rgb(247, 226, 226);
+  font-size: large;
+}
+
+.loadMoreBtn:hover {
+  cursor: pointer;
+  background-color: rgba(62, 73, 91, 0.625);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

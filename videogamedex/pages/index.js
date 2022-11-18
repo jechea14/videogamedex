@@ -103,10 +103,10 @@ export default function Home({games}) {
               )
         })}
 
+        {
+          !loading && <button className={styles.loadMoreBtn} onClick={handleNextPage}>Load More</button>
+        }
       </div>
-      {
-        !loading && <button onClick={handleNextPage}>Load More</button>
-      }
       <div>{loading && 'Loading...'}</div>
     </div>
   );
