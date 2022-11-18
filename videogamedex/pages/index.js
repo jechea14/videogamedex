@@ -8,7 +8,7 @@ export default function Home({games}) {
   const [nextPage, setNextPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("")
-  let next;
+  const [isNextNull, setIsNextNull] = useState(false)
 
   useEffect(() => {
     setLoading(true);
@@ -22,6 +22,9 @@ export default function Home({games}) {
         })
         .then((json) => {
           setData([...data, ...json['results']]);
+          json['next'] === null ? setIsNextNull(true) : setIsNextNull(false)
+          console.log(isNextNull)
+
         });
       setLoading(false);
     };
@@ -70,9 +73,9 @@ export default function Home({games}) {
           return response.json();
         })
         .then((json) => {
-          console.log(json)
-          next = json['next']
           setData([...data, ...json['results']]);
+          json['next'] !== null ? setIsNextNull(false) : setIsNextNull(true)
+          console.log(isNextNull)
         });
       setLoading(false)
     }
@@ -103,10 +106,10 @@ export default function Home({games}) {
               )
         })}
 
-        {
-          !loading && <button className={styles.loadMoreBtn} onClick={handleNextPage}>Load More</button>
-        }
       </div>
+        {
+          !isNextNull && <button className={styles.loadMoreBtn} onClick={handleNextPage}>Load More</button>
+        }
       <div>{loading && 'Loading...'}</div>
     </div>
   );
