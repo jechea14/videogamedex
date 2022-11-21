@@ -1,7 +1,7 @@
 .container {
     display: flex;
+    flex-direction: column;
     padding: 0.5rem;
-    flex-wrap: wrap;
 }
 
 .bgimg {
@@ -19,4 +19,33 @@
     border-radius: 1rem;
     margin: 0.5rem;
     padding: 1rem;
+    width: auto;
 }
+
+
+@media only screen and (min-width: 768px) {
+    .container {
+        padding: 0 3rem;
+    }
+
+    .imgContainer {
+        display: flex;
+    }
+
+    .detailContainer, .creaters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .bodyContainer {
+        display: flex;
+    }
+
+    .creaters {
+        display: flex;
+    }
+}
+

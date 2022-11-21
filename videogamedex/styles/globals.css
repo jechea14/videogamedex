@@ -18,3 +18,12 @@ a {
   text-decoration: none;
 }
 
+@media only screen and (min-width: 1200px) {
+  body {
+    display: flex;
+    justify-content: center;
+    /* max-width: 80rem; */
+       
+  }
+
+}
