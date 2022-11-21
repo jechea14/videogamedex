@@ -107,10 +107,12 @@ export default function Home({games}) {
         })}
 
       </div>
+      <div className={styles.loadMoreBtnContainer}>
         {
           !isNextNull && <button className={styles.loadMoreBtn} onClick={handleNextPage}>Load More</button>
         }
-      <div>{loading && 'Loading...'}</div>
+        <div>{loading && 'Loading...'}</div>
+      </div>
     </div>
   );
 }

@@ -12,16 +12,7 @@ const games = ({game}) => {
         <NavBar/>
         <div className={styles.container}>
           <h1>{game.name}</h1>
-          {/* <Image 
-            className={styles.bgimg}
-            src={game.background_image_additional} 
-            alt={game.name} 
-            layout='fill'
-            objectFit='cover'
-            objectPosition='center'
-            // width={4000} 
-            // height={2500} 
-          /> */}
+
           <Image 
             src={game.background_image} 
             alt={game.name} 
